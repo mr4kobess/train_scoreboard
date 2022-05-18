@@ -1,0 +1,17 @@
+{% load widget_tweaks %}
+<form>
+    <div class="row">
+        <div class="col">
+            {% render_field search_form.departure_city class="form-control" %}
+        </div>
+        <div class="col">
+            {% render_field search_form.arrival_city class="form-control" %}
+        </div>
+        <div class="col">
+            {% render_field search_form.status class="form-control" %}
+        </div>
+        <div class="col">
+            <input class="btn btn-primary" type="submit" value="Поиск">
+        </div>
+    </div>
+</form>
