@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.views.decorators.http import require_http_methods
 from .models import Train
 from .forms import SearchTrainsForm, TrainForm
 
 
+@require_http_methods(['GET', 'POST'])
 def index(request):
     search_form = SearchTrainsForm(request.GET)
     if search_form.is_valid():
@@ -15,6 +17,7 @@ def index(request):
     return render(request, 'index.html', context={'trains': trains, 'search_form': search_form})
 
 
+@require_http_methods(['GET', 'POST'])
 def train_view(request, train_id):
     train = get_object_or_404(Train, pk=train_id)
     train_form = TrainForm(request.POST or None, instance=train)
@@ -25,6 +28,7 @@ def train_view(request, train_id):
     return render(request, "train.html", {'train_form': train_form, 'train': train})
 
 
+@require_http_methods(['GET', 'POST'])
 def create_train_view(request):
     train_form = TrainForm(request.POST)
     if request.method == 'POST':
@@ -34,6 +38,7 @@ def create_train_view(request):
     return render(request, "new_train.html", {'train_form': train_form})
 
 
+@require_http_methods(['GET', 'POST'])
 def delete_train_view(request, train_id):
     train = get_object_or_404(Train, pk=train_id)
     if request.method == 'POST':
