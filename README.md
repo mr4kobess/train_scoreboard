@@ -78,7 +78,7 @@ C содержимым:
 15. Запустить supervisor<br/>
 ` $ sudo systemctl start supervisor`
 16. Образец конфигурационного файла для Nginx:
-`server {
+```server {
     listen 80;
     server_name server_name_OR_server_ip;
 
@@ -94,4 +94,4 @@ C содержимым:
         add_header P3P 'CP="ALL DSP COR PSAa PSDa OUR NOR ONL UNI COM NAV"';
         add_header Access-Control-Allow-Origin *;
     }
-}`
+}
