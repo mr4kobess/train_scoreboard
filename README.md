@@ -48,8 +48,8 @@
 9. Установить права на выполнение<br/>
 10. Создать конфигурационный файл<br/>
 ```$ vim project/supervisor.testserver.conf```
-```
 C содержимым:
+```
 [program:www_gunicorn]
 	command=/home/www/code/project/bin/start_gunicorn.sh
 	user=www
