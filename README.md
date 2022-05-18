@@ -61,9 +61,8 @@ C содержимым:
 ```
 11. Установить Gunicorn<br/>
 ```$ pip install gunicorn```
-12. Создать конфигурационный файл Gunicorn
+12. Создать конфигурационный файл Gunicorn c содержимым:
 ```
-С содержимым:
     command = '/home/www/code/project/venv/bin/gunicorn'
     pythonpath = '/home/www/code/project/project'
     bind = '127.0.0.1:8001'
